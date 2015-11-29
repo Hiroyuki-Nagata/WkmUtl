@@ -3,18 +3,188 @@
 
 public partial class MainWindow
 {
+	private global::Gtk.UIManager UIManager;
+	
+	private global::Gtk.Action testAction;
+	
+	private global::Gtk.Action Action;
+	
+	private global::Gtk.Action Action1;
+	
+	private global::Gtk.Action Action2;
+	
+	private global::Gtk.Action Action3;
+	
+	private global::Gtk.Action Action4;
+	
+	private global::Gtk.Action Action5;
+	
+	private global::Gtk.Action Action6;
+	
+	private global::Gtk.VBox vbox1;
+	
+	private global::Gtk.MenuBar menubar1;
+	
+	private global::Gtk.Frame frame1;
+	
+	private global::Gtk.Alignment GtkAlignment;
+	
+	private global::Gtk.DrawingArea drawingarea1;
+	
+	private global::Gtk.Label GtkLabel7;
+	
+	private global::Gtk.HBox hbox1;
+	
+	private global::Gtk.HScrollbar hscrollbar1;
+	
+	private global::Gtk.Button button2;
+	
+	private global::Gtk.Button button3;
+	
+	private global::Gtk.Button button4;
+	
+	private global::Gtk.Button button5;
+
 	protected virtual void Build ()
 	{
 		global::Stetic.Gui.Initialize (this);
 		// Widget MainWindow
+		this.UIManager = new global::Gtk.UIManager ();
+		global::Gtk.ActionGroup w1 = new global::Gtk.ActionGroup ("Default");
+		this.testAction = new global::Gtk.Action ("testAction", global::Mono.Unix.Catalog.GetString ("test"), null, null);
+		this.testAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("test");
+		w1.Add (this.testAction, null);
+		this.Action = new global::Gtk.Action ("Action", global::Mono.Unix.Catalog.GetString ("ファイル"), null, null);
+		this.Action.ShortLabel = global::Mono.Unix.Catalog.GetString ("ファイル");
+		w1.Add (this.Action, null);
+		this.Action1 = new global::Gtk.Action ("Action1", global::Mono.Unix.Catalog.GetString ("フィルタ"), null, null);
+		this.Action1.ShortLabel = global::Mono.Unix.Catalog.GetString ("フィルタ");
+		w1.Add (this.Action1, null);
+		this.Action2 = new global::Gtk.Action ("Action2", global::Mono.Unix.Catalog.GetString ("設定"), null, null);
+		this.Action2.ShortLabel = global::Mono.Unix.Catalog.GetString ("設定");
+		w1.Add (this.Action2, null);
+		this.Action3 = new global::Gtk.Action ("Action3", global::Mono.Unix.Catalog.GetString ("編集"), null, null);
+		this.Action3.ShortLabel = global::Mono.Unix.Catalog.GetString ("編集");
+		w1.Add (this.Action3, null);
+		this.Action4 = new global::Gtk.Action ("Action4", global::Mono.Unix.Catalog.GetString ("プロファイル"), null, null);
+		this.Action4.ShortLabel = global::Mono.Unix.Catalog.GetString ("プロファイル");
+		w1.Add (this.Action4, null);
+		this.Action5 = new global::Gtk.Action ("Action5", global::Mono.Unix.Catalog.GetString ("表示"), null, null);
+		this.Action5.ShortLabel = global::Mono.Unix.Catalog.GetString ("表示");
+		w1.Add (this.Action5, null);
+		this.Action6 = new global::Gtk.Action ("Action6", global::Mono.Unix.Catalog.GetString ("その他"), null, null);
+		this.Action6.ShortLabel = global::Mono.Unix.Catalog.GetString ("その他");
+		w1.Add (this.Action6, null);
+		this.UIManager.InsertActionGroup (w1, 0);
+		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
-		this.Title = global::Mono.Unix.Catalog.GetString ("MainWindow");
+		this.Title = global::Mono.Unix.Catalog.GetString ("WkmUtl");
+		this.Icon = global::Gdk.Pixbuf.LoadFromResource ("WkmUtl.fueruwakame.png");
 		this.WindowPosition = ((global::Gtk.WindowPosition)(4));
+		this.DefaultWidth = 1280;
+		this.DefaultHeight = 720;
+		// Container child MainWindow.Gtk.Container+ContainerChild
+		this.vbox1 = new global::Gtk.VBox ();
+		this.vbox1.Name = "vbox1";
+		this.vbox1.Spacing = 6;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='Action' action='Action'/><menu name='Action1' action='Action1'/><menu name='Action2' action='Action2'/><menu name='Action3' action='Action3'/><menu name='Action4' action='Action4'/><menu name='Action5' action='Action5'/><menu name='Action6' action='Action6'/></menubar></ui>");
+		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
+		this.menubar1.Name = "menubar1";
+		this.vbox1.Add (this.menubar1);
+		global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.menubar1]));
+		w2.Position = 0;
+		w2.Expand = false;
+		w2.Fill = false;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.frame1 = new global::Gtk.Frame ();
+		this.frame1.Name = "frame1";
+		this.frame1.ShadowType = ((global::Gtk.ShadowType)(0));
+		// Container child frame1.Gtk.Container+ContainerChild
+		this.GtkAlignment = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
+		this.GtkAlignment.Name = "GtkAlignment";
+		this.GtkAlignment.LeftPadding = ((uint)(12));
+		// Container child GtkAlignment.Gtk.Container+ContainerChild
+		this.drawingarea1 = new global::Gtk.DrawingArea ();
+		this.drawingarea1.Name = "drawingarea1";
+		this.GtkAlignment.Add (this.drawingarea1);
+		this.frame1.Add (this.GtkAlignment);
+		this.GtkLabel7 = new global::Gtk.Label ();
+		this.GtkLabel7.Name = "GtkLabel7";
+		this.GtkLabel7.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>WkmUtl モックアップ</b>");
+		this.GtkLabel7.UseMarkup = true;
+		this.frame1.LabelWidget = this.GtkLabel7;
+		this.vbox1.Add (this.frame1);
+		global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.frame1]));
+		w5.Position = 1;
+		// Container child vbox1.Gtk.Box+BoxChild
+		this.hbox1 = new global::Gtk.HBox ();
+		this.hbox1.Name = "hbox1";
+		this.hbox1.Spacing = 6;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.hscrollbar1 = new global::Gtk.HScrollbar (null);
+		this.hscrollbar1.Name = "hscrollbar1";
+		this.hscrollbar1.Adjustment.Upper = 100;
+		this.hscrollbar1.Adjustment.PageIncrement = 10;
+		this.hscrollbar1.Adjustment.PageSize = 10;
+		this.hscrollbar1.Adjustment.StepIncrement = 1;
+		this.hscrollbar1.Adjustment.Value = 61.6535433070866;
+		this.hbox1.Add (this.hscrollbar1);
+		global::Gtk.Box.BoxChild w6 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.hscrollbar1]));
+		w6.Position = 0;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.button2 = new global::Gtk.Button ();
+		this.button2.CanFocus = true;
+		this.button2.Name = "button2";
+		this.button2.UseUnderline = true;
+		this.button2.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.hbox1.Add (this.button2);
+		global::Gtk.Box.BoxChild w7 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button2]));
+		w7.Position = 1;
+		w7.Expand = false;
+		w7.Fill = false;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.button3 = new global::Gtk.Button ();
+		this.button3.CanFocus = true;
+		this.button3.Name = "button3";
+		this.button3.UseUnderline = true;
+		this.button3.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.hbox1.Add (this.button3);
+		global::Gtk.Box.BoxChild w8 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button3]));
+		w8.Position = 2;
+		w8.Expand = false;
+		w8.Fill = false;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.button4 = new global::Gtk.Button ();
+		this.button4.CanFocus = true;
+		this.button4.Name = "button4";
+		this.button4.UseUnderline = true;
+		this.button4.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.hbox1.Add (this.button4);
+		global::Gtk.Box.BoxChild w9 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button4]));
+		w9.Position = 3;
+		w9.Expand = false;
+		w9.Fill = false;
+		// Container child hbox1.Gtk.Box+BoxChild
+		this.button5 = new global::Gtk.Button ();
+		this.button5.CanFocus = true;
+		this.button5.Name = "button5";
+		this.button5.UseUnderline = true;
+		this.button5.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.hbox1.Add (this.button5);
+		global::Gtk.Box.BoxChild w10 = ((global::Gtk.Box.BoxChild)(this.hbox1 [this.button5]));
+		w10.Position = 4;
+		w10.Expand = false;
+		w10.Fill = false;
+		this.vbox1.Add (this.hbox1);
+		global::Gtk.Box.BoxChild w11 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hbox1]));
+		w11.Position = 2;
+		w11.Expand = false;
+		w11.Fill = false;
+		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 400;
-		this.DefaultHeight = 300;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 	}
